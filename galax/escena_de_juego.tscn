@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://coctj3re88y1d"]
+
+[ext_resource type="Script" uid="uid://b1c22hcsbcuch" path="res://scripts/Nave.cs" id="1_hvnl1"]
+[ext_resource type="Texture2D" uid="uid://cxigrhsrxqrh6" path="res://imagenes/ship_sidesA.png" id="1_mxdlr"]
+[ext_resource type="Script" uid="uid://unrtfq0dc5g8" path="res://scripts/EscenaDeJuego.cs" id="1_srw4e"]
+[ext_resource type="PackedScene" uid="uid://cwvam2dshod08" path="res://enemigo.tscn" id="3_n44pc"]
+[ext_resource type="FontFile" uid="uid://bi24tfyioehed" path="res://tipografias/KarmaFuture.ttf" id="5_ww5sq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjl7i"]
+font = ExtResource("5_ww5sq")
+font_size = 60
+
+[node name="EscenaDeJuego" type="Node2D"]
+script = ExtResource("1_srw4e")
+
+[node name="Nave" type="Area2D" parent="."]
+position = Vector2(455, 460)
+script = ExtResource("1_hvnl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nave"]
+texture = ExtResource("1_mxdlr")
+
+[node name="TextoPuntos" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 95.0
+offset_bottom = 45.0
+text = "Puntos: 0"
+
+[node name="ContenedorEnemigos" type="Node2D" parent="."]
+
+[node name="Enemigo" parent="ContenedorEnemigos" instance=ExtResource("3_n44pc")]
+position = Vector2(355, 200)
+
+[node name="Enemigo2" parent="ContenedorEnemigos" instance=ExtResource("3_n44pc")]
+position = Vector2(455, 200)
+
+[node name="Enemigo3" parent="ContenedorEnemigos" instance=ExtResource("3_n44pc")]
+position = Vector2(555, 200)
+
+[node name="Enemigo4" parent="ContenedorEnemigos" instance=ExtResource("3_n44pc")]
+position = Vector2(410, 300)
+
+[node name="Enemigo5" parent="ContenedorEnemigos" instance=ExtResource("3_n44pc")]
+position = Vector2(510, 300)
+
+[node name="TextoPartidaGanada" type="Label" parent="."]
+visible = false
+offset_left = 247.0
+offset_top = 190.0
+offset_right = 657.0
+offset_bottom = 269.0
+text = "Has ganado!!!"
+label_settings = SubResource("LabelSettings_hjl7i")

@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dika3ocoq2rcd"]
+
+[ext_resource type="FontFile" uid="uid://bi24tfyioehed" path="res://tipografias/KarmaFuture.ttf" id="1_lv27y"]
+[ext_resource type="Script" uid="uid://brwme5qvy2br8" path="res://scripts/Bienvenida.cs" id="1_wdodj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdodj"]
+font = ExtResource("1_lv27y")
+font_size = 100
+font_color = Color(0.309804, 0.94902, 0.635294, 1)
+
+[node name="Bienvenida" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wdodj")
+
+[node name="NombreJuego" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -144.5
+offset_right = 147.0
+offset_bottom = -13.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Galax"
+label_settings = SubResource("LabelSettings_wdodj")
+
+[node name="BotonComenzar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = 6.0
+offset_right = 94.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lv27y")
+theme_override_font_sizes/font_size = 35
+text = "Jugar"
+
+[connection signal="pressed" from="BotonComenzar" to="." method="_on_boton_comenzar_pressed"]

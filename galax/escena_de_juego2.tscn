@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://dh2ppjvgjv1ns"]
+
+[ext_resource type="Script" uid="uid://unrtfq0dc5g8" path="res://scripts/EscenaDeJuego.cs" id="1_0eir3"]
+[ext_resource type="Script" uid="uid://dk3q4o2dchm2e" path="res://scripts/ParallaxLayer.cs" id="2_w0aac"]
+[ext_resource type="Texture2D" uid="uid://cdwuepc5cktsv" path="res://imagenes/back.png" id="3_bwjnf"]
+[ext_resource type="Script" uid="uid://b1c22hcsbcuch" path="res://scripts/Nave.cs" id="4_xing4"]
+[ext_resource type="Texture2D" uid="uid://cxigrhsrxqrh6" path="res://imagenes/ship_sidesA.png" id="5_uspc6"]
+[ext_resource type="PackedScene" uid="uid://cwvam2dshod08" path="res://enemigo.tscn" id="6_bkvh3"]
+[ext_resource type="FontFile" uid="uid://bi24tfyioehed" path="res://tipografias/KarmaFuture.ttf" id="7_xgqln"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_le75j"]
+script/source = "using Godot;
+using System;
+
+public partial class ParallaxBackground : Godot.ParallaxBackground
+{
+}
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww5sq"]
+size = Vector2(18, 21)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjl7i"]
+font = ExtResource("7_xgqln")
+font_size = 60
+
+[node name="EscenaDeJuego" type="Node2D"]
+script = ExtResource("1_0eir3")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = SubResource("CSharpScript_le75j")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(910, 1024)
+script = ExtResource("2_w0aac")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("3_bwjnf")
+centered = false
+
+[node name="Nave" type="Area2D" parent="."]
+position = Vector2(455, 460)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("4_xing4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nave"]
+texture = ExtResource("5_uspc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nave"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_ww5sq")
+
+[node name="TextoPuntos" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 95.0
+offset_bottom = 45.0
+text = "Puntos: 0"
+
+[node name="TextoVidas" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 54.0
+offset_right = 95.0
+offset_bottom = 77.0
+text = "Vidas: 3"
+
+[node name="ContenedorEnemigos" type="Node2D" parent="."]
+
+[node name="Enemigo" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(355, 200)
+
+[node name="Enemigo2" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(455, 200)
+
+[node name="Enemigo3" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(555, 200)
+
+[node name="Enemigo4" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(410, 300)
+
+[node name="Enemigo5" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(510, 300)
+
+[node name="Enemigo6" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(264, 140)
+
+[node name="Enemigo7" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(395, 141)
+
+[node name="Enemigo8" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(513, 140)
+
+[node name="Enemigo9" parent="ContenedorEnemigos" instance=ExtResource("6_bkvh3")]
+position = Vector2(632, 139)
+
+[node name="TextoPartidaGanada" type="Label" parent="."]
+visible = false
+offset_left = 247.0
+offset_top = 190.0
+offset_right = 657.0
+offset_bottom = 269.0
+text = "Has ganado!!!"
+label_settings = SubResource("LabelSettings_hjl7i")

@@ -1,18 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://crt01wnase53"]
 
 [ext_resource type="Script" uid="uid://jgq5tnwlw30e" path="res://scripts/Disparo.cs" id="1_8niyp"]
-[ext_resource type="Texture2D" uid="uid://co43bpmfgjok3" path="res://imagenes/fire.png" id="1_gnjys"]
+[ext_resource type="Texture2D" uid="uid://d1y7ahry5qatd" path="res://imagenes/star_tiny.png" id="2_8niyp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8niyp"]
-size = Vector2(2, 12)
+size = Vector2(6, 5)
 
 [node name="Disparo" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_8niyp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_gnjys")
+texture = ExtResource("2_8niyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_8niyp")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

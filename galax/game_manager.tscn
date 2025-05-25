@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://be80y11cbxgvj"]
+
+[ext_resource type="Script" uid="uid://bnydgfjbrqiuc" path="res://scripts/GameManager.cs" id="1_70yv6"]
+[ext_resource type="AudioStream" uid="uid://djdau4te1um4p" path="res://sonidos/explosionCrunch_000.ogg" id="2_smx3j"]
+[ext_resource type="AudioStream" uid="uid://cy3ep35qnoq7m" path="res://sonidos/laserSmall_000.ogg" id="3_d5upp"]
+[ext_resource type="AudioStream" uid="uid://dsmvlw753biab" path="res://sonidos/laserLarge_000.ogg" id="4_vk86k"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_70yv6")
+
+[node name="SonidoDisparoEnemigo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vk86k")
+
+[node name="SonidoExplosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_smx3j")
+
+[node name="SonidoDisparoNave" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_d5upp")

@@ -1,10 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://coctj3re88y1d"]
+[gd_scene load_steps=11 format=3 uid="uid://coctj3re88y1d"]
 
 [ext_resource type="Script" uid="uid://b1c22hcsbcuch" path="res://scripts/Nave.cs" id="1_hvnl1"]
 [ext_resource type="Texture2D" uid="uid://cxigrhsrxqrh6" path="res://imagenes/ship_sidesA.png" id="1_mxdlr"]
 [ext_resource type="Script" uid="uid://unrtfq0dc5g8" path="res://scripts/EscenaDeJuego.cs" id="1_srw4e"]
+[ext_resource type="Script" uid="uid://dk3q4o2dchm2e" path="res://scripts/ParallaxLayer.cs" id="2_w2e05"]
 [ext_resource type="PackedScene" uid="uid://cwvam2dshod08" path="res://enemigo.tscn" id="3_n44pc"]
+[ext_resource type="Texture2D" uid="uid://cdwuepc5cktsv" path="res://imagenes/back.png" id="3_tva0u"]
 [ext_resource type="FontFile" uid="uid://bi24tfyioehed" path="res://tipografias/KarmaFuture.ttf" id="5_ww5sq"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_le75j"]
+script/source = "using Godot;
+using System;
+
+public partial class ParallaxBackground : Godot.ParallaxBackground
+{
+}
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww5sq"]
+size = Vector2(18, 21)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hjl7i"]
 font = ExtResource("5_ww5sq")
@@ -13,12 +27,29 @@ font_size = 60
 [node name="EscenaDeJuego" type="Node2D"]
 script = ExtResource("1_srw4e")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = SubResource("CSharpScript_le75j")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(910, 1024)
+script = ExtResource("2_w2e05")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("3_tva0u")
+centered = false
+
 [node name="Nave" type="Area2D" parent="."]
 position = Vector2(455, 460)
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_hvnl1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Nave"]
 texture = ExtResource("1_mxdlr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nave"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_ww5sq")
 
 [node name="TextoPuntos" type="Label" parent="."]
 offset_left = 23.0
@@ -26,6 +57,13 @@ offset_top = 22.0
 offset_right = 95.0
 offset_bottom = 45.0
 text = "Puntos: 0"
+
+[node name="TextoVidas" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 54.0
+offset_right = 95.0
+offset_bottom = 77.0
+text = "Vidas: 3"
 
 [node name="ContenedorEnemigos" type="Node2D" parent="."]
 

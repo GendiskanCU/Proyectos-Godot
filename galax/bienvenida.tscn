@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dika3ocoq2rcd"]
+[gd_scene load_steps=6 format=3 uid="uid://dika3ocoq2rcd"]
 
 [ext_resource type="FontFile" uid="uid://bi24tfyioehed" path="res://tipografias/KarmaFuture.ttf" id="1_lv27y"]
 [ext_resource type="Script" uid="uid://brwme5qvy2br8" path="res://scripts/Bienvenida.cs" id="1_wdodj"]
+[ext_resource type="Texture2D" uid="uid://cdwuepc5cktsv" path="res://imagenes/back.png" id="2_d01hh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wdodj"]
 font = ExtResource("1_lv27y")
 font_size = 100
 font_color = Color(0.309804, 0.94902, 0.635294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3m2hj"]
+bg_color = Color(0.53462, 0.640771, 0.443568, 1)
 
 [node name="Bienvenida" type="Control"]
 layout_mode = 3
@@ -16,6 +20,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wdodj")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+texture = ExtResource("2_d01hh")
+centered = false
 
 [node name="NombreJuego" type="Label" parent="."]
 layout_mode = 1
@@ -46,8 +54,10 @@ offset_right = 94.0
 offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.0797986, 0.0573611, 0.0152024, 1)
 theme_override_fonts/font = ExtResource("1_lv27y")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3m2hj")
 text = "Jugar"
 
 [connection signal="pressed" from="BotonComenzar" to="." method="_on_boton_comenzar_pressed"]

@@ -22,16 +22,19 @@ public partial class Disparo : Area2D
 
     public void _on_area_entered(Area2D otro)
     {
-        GD.Print("Boom!");
 
-        // Llamada al método que incrementa los puntos del script del nodo EscenaDeJuego
-        GetNode("/root/EscenaDeJuego").Call("IncrementarPuntos");
+        //if (otro is Enemigo)
+        {
+            GD.Print("Boom!");
 
-        otro.QueueFree();
-        QueueFree();
+            // Llamada al método que incrementa los puntos del script del nodo EscenaDeJuego
+            GetNode("/root/EscenaDeJuego").Call("IncrementarPuntos");
 
-        // Llamada al método que mostrará la explosión
-        GetNode<EscenaDeJuego>("/root/EscenaDeJuego").Explotar(Position.X, Position.Y);
-        
+            otro.QueueFree();
+            QueueFree();
+
+            // Llamada al método que mostrará la explosión
+            GetNode<EscenaDeJuego>("/root/EscenaDeJuego").Explotar(Position.X, Position.Y);
+        }
     }
 }

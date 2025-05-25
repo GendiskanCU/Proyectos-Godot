@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://utbjgoxhsuc6"]
+
+[ext_resource type="Script" uid="uid://71wvn11i5lyh" path="res://DisparoEnemigo.cs" id="1_4t840"]
+[ext_resource type="Texture2D" uid="uid://co43bpmfgjok3" path="res://imagenes/fire.png" id="2_4t840"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umbyk"]
+size = Vector2(2, 10)
+
+[node name="DisparoEnemigo" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_4t840")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4t840")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_umbyk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

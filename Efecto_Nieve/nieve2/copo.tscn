@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://7t2dr2o15dsb"]
+
+[ext_resource type="Script" uid="uid://ceprwoyxp8gqo" path="res://scripts/Copo.cs" id="1_3tlh5"]
+[ext_resource type="Texture2D" uid="uid://bf84knrevfkkh" path="res://imagenes/4x4.png" id="2_oqu8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tlh5"]
+size = Vector2(2, 2)
+
+[node name="Copo" type="Area2D"]
+script = ExtResource("1_3tlh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oqu8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3tlh5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

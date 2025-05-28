@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://6vacdam5pgwu"]
+
+[ext_resource type="Script" uid="uid://de54f8c7oqcdi" path="res://scripts/Nieve2.cs" id="1_macrf"]
+[ext_resource type="Texture2D" uid="uid://8fe4r3he58s8" path="res://imagenes/feliz_a.png" id="2_fyoyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3wr4"]
+size = Vector2(1001, 20)
+
+[node name="Nieve2" type="Node2D"]
+script = ExtResource("1_macrf")
+
+[node name="Fondo" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo"]
+modulate = Color(0.721569, 0.0862745, 0.109804, 1)
+position = Vector2(2, -3)
+texture = ExtResource("2_fyoyd")
+centered = false
+
+[node name="Collision_o" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(813, 345, 818, 334, 824, 327, 833, 320, 843, 314, 855, 311, 878, 311, 888, 313, 894, 316, 899, 321, 903, 332, 901, 358, 891, 378, 877, 388, 870, 391, 853, 392, 840, 389, 829, 382, 820, 374, 814, 362, 812, 352)
+
+[node name="Collision_abajo" type="CollisionShape2D" parent="Fondo"]
+position = Vector2(501.5, 651)
+shape = SubResource("RectangleShape2D_x3wr4")
+
+[node name="Collision_f" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(99, 278, 104, 280, 117, 284, 146, 284, 178, 282, 190, 281, 193, 285, 197, 297, 199, 314, 196, 325, 183, 330, 164, 326, 155, 322, 155, 334, 176, 335, 177, 359, 149, 363, 159, 386, 100, 398, 101, 388, 114, 382, 109, 332, 112, 296, 98, 295)
+
+[node name="Collision_e" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(205, 328, 213, 320, 225, 314, 243, 311, 267, 310, 282, 314, 291, 322, 294, 326, 297, 332, 297, 341, 297, 352, 238, 343, 286, 356, 291, 363, 291, 371, 279, 386, 240, 390, 219, 379, 208, 363, 203, 347, 204, 333)
+
+[node name="Collision_l" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(294, 280, 324, 280, 341, 278, 344, 287, 346, 310, 344, 341, 340, 356, 335, 368, 348, 369, 349, 386, 340, 386, 332, 384, 316, 387, 305, 391, 303, 390, 307, 377, 312, 349, 311, 309, 307, 294, 296, 291)
+
+[node name="Collision_punto" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(369, 285, 376, 280, 384, 279, 399, 279, 412, 281, 420, 287, 422, 293, 418, 298, 408, 301, 386, 303, 377, 300, 371, 295)
+
+[node name="Collision_i" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(357, 319, 378, 317, 394, 314, 411, 309, 406, 343, 406, 362, 408, 367, 415, 368, 421, 367, 422, 379, 422, 384, 408, 383, 386, 383, 369, 384, 353, 386, 354, 374, 363, 372, 370, 365, 373, 356, 373, 332, 366, 329, 361, 329)
+
+[node name="Collision_z" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(430, 331, 431, 321, 437, 315, 447, 311, 457, 309, 477, 310, 493, 312, 505, 313, 522, 312, 519, 329, 511, 343, 494, 351, 475, 357, 493, 356, 510, 355, 520, 357, 528, 362, 531, 370, 526, 380, 516, 388, 496, 392, 459, 388, 439, 386, 420, 389, 423, 376, 427, 363, 435, 352, 444, 346, 454, 342, 474, 337)
+
+[node name="Collision_a" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(621, 285, 621, 285, 635, 284, 649, 280, 660, 278, 664, 284, 673, 304, 686, 339, 694, 365, 699, 369, 711, 372, 704, 384, 667, 384, 655, 386, 627, 390, 597, 380, 580, 377, 589, 365, 597, 367, 604, 354, 612, 333, 618, 313)
+
+[node name="Collision_palo" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(730, 299, 735, 287, 742, 280, 749, 278, 754, 279, 760, 282, 766, 287, 770, 290, 774, 292, 777, 288, 780, 284, 782, 283, 786, 284, 787, 289, 779, 303, 772, 305, 761, 303, 752, 297, 744, 292, 737, 303)
+
+[node name="Collision_n" type="CollisionPolygon2D" parent="Fondo"]
+polygon = PackedVector2Array(707, 316, 706, 308, 737, 311, 759, 312, 758, 317, 755, 326, 752, 334, 754, 334, 762, 322, 773, 312, 779, 307, 786, 305, 794, 307, 797, 309, 801, 316, 803, 326, 803, 337, 802, 358, 801, 373, 801, 383, 803, 387, 808, 388, 813, 389, 810, 396, 789, 393, 771, 390, 767, 388, 757, 389, 745, 384, 733, 383, 722, 383, 715, 386, 713, 383, 713, 369, 727, 369, 723, 361, 721, 340, 719, 324, 717, 319, 712, 318)

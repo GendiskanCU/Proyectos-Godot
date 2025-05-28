@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://dscq4ok5t126r"]
+
+[ext_resource type="PackedScene" uid="uid://br4mumd868ntm" path="res://copo.tscn" id="1_up7b0"]
+
+[node name="Nieve1" type="Node2D"]
+
+[node name="Copo" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(50, -31)
+
+[node name="Copo2" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(147, -39)
+
+[node name="Copo3" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(217, -19)
+
+[node name="Copo4" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(269, -52)
+
+[node name="Copo5" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(370, -42)
+
+[node name="Copo6" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(435, -25)
+
+[node name="Copo7" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(502, -68)
+
+[node name="Copo8" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(572, -23)
+
+[node name="Copo9" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(653, -45)
+
+[node name="Copo10" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(761, -48)
+
+[node name="Copo11" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(819, -21)
+
+[node name="Copo12" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(887, -63)
+
+[node name="Copo13" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(969, -35)
+
+[node name="Copo14" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(456, -65)
+
+[node name="Copo15" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(179, -61)
+
+[node name="Copo16" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(75, -55)
+
+[node name="Copo17" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(310, -17)
+
+[node name="Copo18" parent="." instance=ExtResource("1_up7b0")]
+position = Vector2(609, -34)

@@ -15,6 +15,10 @@ run/main_scene="uid://dqfokhpyg52sp"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GestorJuego="*res://escenas/gestor_juego.tscn"
+
 [dotnet]
 
 project/assembly_name="MiniMiner"

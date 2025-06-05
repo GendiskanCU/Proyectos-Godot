@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbrcawyp7a7ce"]
+
+[ext_resource type="Script" uid="uid://3ldx3vdk5hio" path="res://scripts/Area2dPuerta.cs" id="1_14scv"]
+[ext_resource type="Texture2D" uid="uid://c47pdbgjutvk" path="res://imagenes/mm-n01-spritesheet-orig.png" id="1_ywiod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14scv"]
+atlas = ExtResource("1_ywiod")
+region = Rect2(0, 32, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcgtm"]
+size = Vector2(62, 62)
+
+[node name="Area2D_Puerta" type="Area2D"]
+script = ExtResource("1_14scv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_14scv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hcgtm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
